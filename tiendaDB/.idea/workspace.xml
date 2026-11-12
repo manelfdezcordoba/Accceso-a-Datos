@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c02660f7-6527-4f5b-a305-ee373f195604" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Cursos/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cursos/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cursos/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cursos/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cursos/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cursos/src/main/java/ies/juanbosco/Alumno.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cursos/src/main/java/ies/juanbosco/Curso.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cursos/src/main/java/ies/juanbosco/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tiendaDB.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ies/juanbosco/DAO/ConexionDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ies/juanbosco/DAO/PedidoDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ies/juanbosco/DAO/ProductoDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ies/juanbosco/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ies/juanbosco/POJOS/Pedido.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ies/juanbosco/POJOS/Producto.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="7.093478904997353E-88" />
+      <entry key="S5" value="2.0424785337575984E-35" />
+      <entry key="S10" value="6.363707304887513E-18" />
+      <entry key="S30" value="2.9387869778097743E-6" />
+      <entry key="S60" value="0.0024241415305031604" />
+      <entry key="M2" value="0.07119986996295312" />
+      <entry key="M5" value="1.4797906689960996" />
+      <entry key="M10" value="11.979894629710591" />
+      <entry key="M15" value="30.24647471026187" />
+      <entry key="M30" value="99.13104805689458" />
+      <entry key="H1" value="217.1021017884792" />
+      <entry key="H2" value="347.1849005834309" />
+      <entry key="H4" value="449.74999618943167" />
+      <entry key="D1" value="565.5739653031981" />
+      <entry key="W1" value="588.9834429550768" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.0" />
+      <entry key="S60" value="1.0000000053576437" />
+      <entry key="M2" value="1.000116266596664" />
+      <entry key="M5" value="1.0793444648612371" />
+      <entry key="M10" value="2.3452698790275734" />
+      <entry key="M15" value="5.499835692381617" />
+      <entry key="M30" value="20.939567735584614" />
+      <entry key="H1" value="50.762516561899204" />
+      <entry key="H2" value="84.50456110935106" />
+      <entry key="H4" value="111.09658976009139" />
+      <entry key="D1" value="140.95960642545901" />
+      <entry key="W1" value="146.96969576318477" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.4861384957513797E-6" />
+      <entry key="MS500" value="0.06829860869380952" />
+      <entry key="S2" value="0.5112142653049612" />
+      <entry key="S5" value="0.764612133844881" />
+      <entry key="S10" value="0.8744210277920362" />
+      <entry key="S30" value="0.9562574068802945" />
+      <entry key="S60" value="0.9802579112481906" />
+      <entry key="M2" value="1.0594825679184467" />
+      <entry key="M5" value="2.5500966779775425" />
+      <entry key="M10" value="14.30288620912461" />
+      <entry key="M15" value="35.70860865079778" />
+      <entry key="M30" value="120.00737557019701" />
+      <entry key="H1" value="267.7953073913257" />
+      <entry key="H2" value="431.6343350486995" />
+      <entry key="H4" value="560.811041316301" />
+      <entry key="D1" value="706.5261579871681" />
+      <entry key="W1" value="735.9520368027634" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3LKqhcK5WjU1HCPZPpSW6dabG4w" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/manelfernandez/IESJuanBosco/AccesoADatos/Accceso a Datos/tiendaDB&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/manelfernandez/IESJuanBosco/AccesoADatos/tiendaDB/src/main/java/ies/juanbosco/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.ml.llm.agents.skills.settings&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;SQL92&quot;
+    ]
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c02660f7-6527-4f5b-a305-ee373f195604" name="Changes" comment="" />
+      <created>1793213232666</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1793213232666</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

@@ -9,15 +9,16 @@ public class ProductoDAO {
 
     public boolean insertar(Producto p) throws SQLException{
         String sql = "INSERT INTO productos (nombre, precio , stock) VALUES (?,?,?)";
-        try(Connection con = ConexionDB.getConexion(); PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
+        try(Connection con = ConexionDB.getConexion();
+            PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
             ps.setString(1, p.getNombre());
             ps.setDouble(2,p.getPrecio());
             ps.setInt(3,p.getStock());
 
             if (ps.executeUpdate() == 0) return false;
-            try(ResultSet generadas = ps.getGeneratedKeys()){
-                if (generadas.next()){
-                    p.setIdProducto(generadas.getInt(1));
+            try(ResultSet rs = ps.getGeneratedKeys()){
+                if (rs.next()){
+                    p.setIdProducto(rs.getInt(1));
                 }
             }
             return true;
@@ -25,7 +26,8 @@ public class ProductoDAO {
     }
     public Producto devolverPorId(int idProdu)throws SQLException{
         String sql = "SELECT idproductos, nombre, precio, stock FROM productos WHERE idproductos = ?";
-        try(Connection con = ConexionDB.getConexion(); PreparedStatement ps = con.prepareStatement(sql)){
+        try(Connection con = ConexionDB.getConexion();
+            PreparedStatement ps = con.prepareStatement(sql)){
             ps.setInt(1, idProdu);
 
             try(ResultSet rs= ps.executeQuery()){

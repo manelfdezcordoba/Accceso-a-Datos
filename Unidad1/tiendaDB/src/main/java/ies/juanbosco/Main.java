@@ -58,7 +58,7 @@ public class Main {
         System.out.println("6 - Salir");
     }
 
-  
+
 
     private static void insertarProducto() throws SQLException {
 
@@ -108,7 +108,7 @@ public class Main {
         }
     }
 
-    // ACTUALIZAR STOCK
+
 
     private static void actualizarStock() throws SQLException {
 
@@ -129,7 +129,6 @@ public class Main {
         }
     }
 
-    // INSERTAR PEDIDO
 
     private static void insertarPedido() throws SQLException {
 
@@ -233,3 +232,4 @@ public class Main {
         }
     }
 }
+//https://youtu.be/gtFaEg6sx38
