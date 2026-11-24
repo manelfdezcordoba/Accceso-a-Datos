@@ -11,11 +11,12 @@ public class ProductoDAO {
         String sql = "INSERT INTO productos (nombre, precio , stock) VALUES (?,?,?)";
         try(Connection con = ConexionDB.getConexion();
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
+            // la consulta sql es para insertar un nuevo producto , con un id autogenerado
             ps.setString(1, p.getNombre());
             ps.setDouble(2,p.getPrecio());
             ps.setInt(3,p.getStock());
 
-            if (ps.executeUpdate() == 0) return false;
+            if (ps.executeUpdate() == 0) return false; // utilizamos el metodo "executeUpdate" para saber si se ha insertado
             try(ResultSet rs = ps.getGeneratedKeys()){
                 if (rs.next()){
                     p.setIdProducto(rs.getInt(1));
@@ -33,7 +34,7 @@ public class ProductoDAO {
             try(ResultSet rs= ps.executeQuery()){
             if (!rs.next()){
             return null;
-}
+}//Buscamos el producto sabiendo el id
         return new Producto(rs.getInt("idproductos"),
         rs.getString("nombre"),
         rs.getDouble("precio"),

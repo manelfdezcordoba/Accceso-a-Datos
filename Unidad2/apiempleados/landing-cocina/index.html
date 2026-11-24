@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabor Semanal · Newsletter de Cocina</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --crema: #FBF6EE;
+      --crema-2: #F3EADB;
+      --carbon: #1F1B16;
+      --texto: #3A332B;
+      --gris: #7A7268;
+      --tomate: #E0482B;
+      --tomate-osc: #B8351C;
+      --albahaca: #3C6E47;
+      --borde: #2A241E;
+      --radio: 14px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: var(--crema);
+      color: var(--texto);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ---------- Cabecera ---------- */
+    header {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-texto {
+      font-family: "Playfair Display", serif;
+      font-weight: 900;
+      font-size: 1.35rem;
+      color: var(--carbon);
+      letter-spacing: -0.01em;
+    }
+    .logo-texto span { color: var(--tomate); }
+    nav ul { list-style: none; display: flex; gap: 28px; }
+    nav a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--texto);
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color .2s, color .2s;
+    }
+    nav a:hover, nav a.activo { color: var(--carbon); border-color: var(--tomate); }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .etiqueta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      border: 1px solid var(--crema-2);
+      color: var(--albahaca);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 22px;
+    }
+    .etiqueta::before {
+      content: "";
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--albahaca);
+    }
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-weight: 900;
+      font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+      line-height: 1.05;
+      color: var(--carbon);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .subtitulo {
+      font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+      font-weight: 600;
+      color: var(--tomate-osc);
+      margin-bottom: 14px;
+    }
+    .descripcion {
+      font-size: 1.05rem;
+      color: var(--texto);
+      max-width: 480px;
+      margin-bottom: 32px;
+    }
+
+    /* ---------- Formulario ---------- */
+    .formulario {
+      display: flex;
+      gap: 12px;
+      max-width: 520px;
+    }
+    .formulario label {
+      position: absolute;
+      width: 1px; height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
+    .formulario input {
+      flex: 1;
+      min-width: 0;
+      font: inherit;
+      font-size: 1rem;
+      padding: 16px 18px;
+      border: 2px solid var(--borde);
+      border-radius: var(--radio);
+      background: #fff;
+      color: var(--carbon);
+      outline: none;
+      transition: box-shadow .2s;
+    }
+    .formulario input::placeholder { color: #8C847A; }
+    .formulario input:focus { box-shadow: 0 0 0 4px rgba(224, 72, 43, .22); }
+    .formulario button {
+      font: inherit;
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 16px 30px;
+      border: none;
+      border-radius: var(--radio);
+      background: var(--tomate);
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 8px 20px -8px rgba(224, 72, 43, .7);
+      transition: background .2s, transform .15s;
+      white-space: nowrap;
+    }
+    .formulario button:hover { background: var(--tomate-osc); transform: translateY(-1px); }
+    .formulario button:active { transform: translateY(0); }
+
+    .legal {
+      margin-top: 14px;
+      font-size: 0.78rem;
+      color: var(--gris);
+      max-width: 520px;
+      line-height: 1.5;
+    }
+    .legal a { text-decoration: underline; }
+
+    .mensaje-ok {
+      display: none;
+      margin-top: 14px;
+      max-width: 520px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      background: #E6F0E8;
+      color: var(--albahaca);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .prueba-social {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 30px;
+      font-size: 0.92rem;
+      color: var(--texto);
+    }
+    .avatares { display: flex; }
+    .avatares span {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 3px solid var(--crema);
+      margin-left: -10px;
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+    }
+    .avatares span:first-child { margin-left: 0; }
+    .prueba-social strong { color: var(--carbon); }
+
+    /* ---------- Ilustración ---------- */
+    .ilustracion {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      max-width: 500px;
+      width: 100%;
+      justify-self: center;
+    }
+    .ilustracion .fondo {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #FFD9B8 0%, #F6B98E 45%, #E98C5E 100%);
+    }
+    .ilustracion svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .tarjeta-flotante {
+      position: absolute;
+      background: #fff;
+      border-radius: 14px;
+      padding: 12px 16px;
+      box-shadow: 0 14px 30px -12px rgba(31, 27, 22, .35);
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .tarjeta-flotante b { display: block; color: var(--carbon); font-size: 0.9rem; }
+    .tarjeta-flotante small { color: var(--gris); }
+    .tarjeta-flotante .ico { font-size: 1.5rem; }
+    .tf-1 { top: 8%; left: -6%; }
+    .tf-2 { bottom: 10%; right: -4%; }
+
+    /* ---------- Beneficios ---------- */
+    .beneficios {
+      background: #fff;
+      border-top: 1px solid var(--crema-2);
+      border-bottom: 1px solid var(--crema-2);
+    }
+    .beneficios-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+    .beneficios h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
+      color: var(--carbon);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .grid-beneficios {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .beneficio {
+      background: var(--crema);
+      border-radius: 18px;
+      padding: 28px;
+    }
+    .beneficio .ico {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 1.6rem;
+      background: #fff;
+      margin-bottom: 16px;
+    }
+    .beneficio h3 { font-size: 1.1rem; color: var(--carbon); margin-bottom: 6px; }
+    .beneficio p { font-size: 0.95rem; }
+
+    /* ---------- Pie ---------- */
+    footer {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 24px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.88rem;
+      color: var(--gris);
+    }
+    footer .autor { color: var(--texto); }
+    footer .autor strong { color: var(--carbon); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 24px; text-align: center; }
+      .descripcion, .formulario, .legal, .mensaje-ok { margin-left: auto; margin-right: auto; }
+      .prueba-social { justify-content: center; }
+      .ilustracion { max-width: 380px; }
+      .grid-beneficios { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      header { flex-direction: column; gap: 12px; padding: 18px 16px; }
+      nav ul { gap: 6px 16px; flex-wrap: wrap; justify-content: center; }
+      nav a { font-size: 0.88rem; white-space: nowrap; }
+      .etiqueta { font-size: 0.75rem; }
+      .hero { padding-left: 16px; padding-right: 16px; }
+      .formulario { flex-direction: column; }
+      .formulario button { width: 100%; }
+      .tf-1 { left: 0; }
+      .tf-2 { right: 0; }
+      .beneficios-inner { padding: 48px 16px; }
+      footer { flex-direction: column; text-align: center; padding: 24px 16px 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="logo" aria-label="Sabor Semanal - Inicio">
+      <!-- Logo: olla humeante -->
+      <svg width="42" height="42" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="24" fill="#E0482B"/>
+        <path d="M17 13c0 2 2 2 2 4s-2 2-2 4M24 11c0 2 2 2 2 4s-2 2-2 4M31 13c0 2 2 2 2 4s-2 2-2 4" stroke="#FBF6EE" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M11 25h26v4a9 9 0 0 1-9 9h-8a9 9 0 0 1-9-9v-4z" fill="#FBF6EE"/>
+        <rect x="8" y="23" width="32" height="3" rx="1.5" fill="#1F1B16"/>
+      </svg>
+      <span class="logo-texto">Sabor<span>Semanal</span></span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="#" class="activo">Inicio</a></li>
+        <li><a href="#">Recetas</a></li>
+        <li><a href="#">Sobre Nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-texto">
+        <span class="etiqueta">Newsletter gratuita · cada lunes</span>
+        <h1>Únete a nuestra comunidad</h1>
+        <p class="subtitulo">Recibe tips semanales</p>
+        <p class="descripcion">
+          Recetas de temporada, trucos de chef y técnicas sencillas para cocinar mejor en casa.
+          Directamente en tu bandeja de entrada, sin spam.
+        </p>
+
+        <form class="formulario" id="form-suscripcion" novalidate>
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="Introduce tu correo electrónico" required autocomplete="email">
+          <button type="submit">Suscribirse</button>
+        </form>
+        <p class="mensaje-ok" id="mensaje-ok" role="status">¡Gracias! Revisa tu correo para confirmar la suscripción.</p>
+
+        <p class="legal">
+          Al suscribirte aceptas nuestra <a href="#">Política de Privacidad</a>. Tus datos se usarán
+          únicamente para enviarte la newsletter y no se cederán a terceros. Puedes darte de baja
+          en cualquier momento desde el enlace incluido en cada correo.
+        </p>
+
+        <div class="prueba-social">
+          <div class="avatares" aria-hidden="true">
+            <span style="background:#FFD9B8">👩‍🍳</span>
+            <span style="background:#D8E8DA">👨‍🍳</span>
+            <span style="background:#F8E1A6">🧑‍🍳</span>
+          </div>
+          <p>Más de <strong>12.000 cocineros</strong> ya reciben nuestros tips</p>
+        </div>
+      </div>
+
+      <div class="ilustracion" aria-hidden="true">
+        <div class="fondo"></div>
+        <svg viewBox="0 0 400 400">
+          <!-- Plato -->
+          <ellipse cx="200" cy="232" rx="132" ry="128" fill="#1F1B16" opacity=".12"/>
+          <circle cx="200" cy="215" r="128" fill="#FBF6EE"/>
+          <circle cx="200" cy="215" r="100" fill="#fff" stroke="#F3EADB" stroke-width="4"/>
+          <!-- Pasta -->
+          <g fill="none" stroke="#F2C14E" stroke-width="7" stroke-linecap="round">
+            <path d="M135 220c20-30 50-30 65-5s45 25 65-5"/>
+            <path d="M140 240c25-25 45-20 60 0s40 20 60-5"/>
+            <path d="M150 200c20-20 40-15 55 5s35 15 50-10"/>
+            <path d="M155 258c20-15 40-10 50 2s35 10 45-8"/>
+            <path d="M160 185c15-12 35-10 45 5s30 10 40-5"/>
+          </g>
+          <!-- Tomates -->
+          <circle cx="175" cy="205" r="16" fill="#E0482B"/>
+          <circle cx="232" cy="232" r="14" fill="#E0482B"/>
+          <circle cx="215" cy="190" r="11" fill="#E0482B"/>
+          <circle cx="170" cy="205" r="4" fill="#fff" opacity=".5"/>
+          <!-- Albahaca -->
+          <path d="M195 215c-10-18 5-30 18-22-2 14-8 20-18 22z" fill="#3C6E47"/>
+          <path d="M200 216c18-8 30 4 22 16-14-2-20-8-22-16z" fill="#4F8A5B"/>
+          <!-- Tenedor -->
+          <g transform="rotate(-25 330 120)">
+            <rect x="326" y="60" width="8" height="120" rx="4" fill="#1F1B16"/>
+            <rect x="316" y="40" width="4" height="34" rx="2" fill="#1F1B16"/>
+            <rect x="324" y="40" width="4" height="34" rx="2" fill="#1F1B16"/>
+            <rect x="332" y="40" width="4" height="34" rx="2" fill="#1F1B16"/>
+            <rect x="340" y="40" width="4" height="34" rx="2" fill="#1F1B16"/>
+            <rect x="316" y="70" width="28" height="8" rx="4" fill="#1F1B16"/>
+          </g>
+        </svg>
+        <div class="tarjeta-flotante tf-1">
+          <span class="ico">⏱️</span>
+          <div><b>Recetas en 20 min</b><small>Para el día a día</small></div>
+        </div>
+        <div class="tarjeta-flotante tf-2">
+          <span class="ico">⭐</span>
+          <div><b>4,9 / 5</b><small>Valoración media</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="beneficios">
+      <div class="beneficios-inner">
+        <h2>¿Qué recibirás cada semana?</h2>
+        <div class="grid-beneficios">
+          <article class="beneficio">
+            <div class="ico">🥘</div>
+            <h3>Recetas de temporada</h3>
+            <p>Platos con ingredientes frescos del mercado, explicados paso a paso.</p>
+          </article>
+          <article class="beneficio">
+            <div class="ico">🔪</div>
+            <h3>Trucos de chef</h3>
+            <p>Técnicas profesionales adaptadas a la cocina de casa para ganar tiempo.</p>
+          </article>
+          <article class="beneficio">
+            <div class="ico">🛒</div>
+            <h3>Menú semanal</h3>
+            <p>Planificación y lista de la compra para comer bien sin complicarte.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 SaborSemanal · Newsletter de cocina</p>
+    <p class="autor">Diseñado por <strong>Manel Fernández Córdoba</strong> · 2º DAM · IES Juan Bosco</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('form-suscripcion');
+    const input = document.getElementById('email');
+    const ok = document.getElementById('mensaje-ok');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!input.checkValidity()) {
+        input.focus();
+        input.style.borderColor = '#B8351C';
+        return;
+      }
+      input.style.borderColor = '';
+      ok.style.display = 'block';
+      form.reset();
+    });
+  </script>
+</body>
+</html>

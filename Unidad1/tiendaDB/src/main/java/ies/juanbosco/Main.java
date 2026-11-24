@@ -20,7 +20,11 @@ public class Main {
     private static final PedidoDAO pedidoDAO = new PedidoDAO();
     private static final SimpleDateFormat FORMATO =
             new SimpleDateFormat("yyyy-MM-dd");
-
+/*
+Nuestro main nos crea un menu con 6 opciones diferentes para cada necesidad que nos pedia el ejercicio
+Este utiliza los metodos creados en las clases DAO para poder ejecutrlos correctamente
+utilizando asi la escritura por teclado dentro de la ejecucion del programa gracias al metodo Scanner
+ */
     public static void main(String[] args) {
 
         int opcion;
@@ -211,7 +215,10 @@ public class Main {
 
 
     private static Date leerFecha(String mensaje) {
-
+//Utilizaremos el formato de fecha yyyy-mm-dd , esta fehca entra siendo un String
+        //Para comprobar que no esta vacia haremos un if que comprobamos si hay longitud en la  cadena
+        //En caso de que sea true ,es decir que este vacio , devolvera la fecha de hoy , si no esta vacio
+        //la fecha introducidad de forma texto , cambiara a formato date
         FORMATO.setLenient(false);
 
         while (true) {
@@ -232,4 +239,4 @@ public class Main {
         }
     }
 }
-//https://youtu.be/gtFaEg6sx38
+//
